@@ -25,11 +25,6 @@ vrf definition MANAGEMENT
 !
 logging userinfo
 !
-{% if config_context["aaa-new-model"] == false %}
-no aaa new-model
-{% else %}
-aaa new-model
-{% endif %}
 {% include "./ios/call_home.j2" %}
 !
 !
@@ -175,13 +170,7 @@ redundancy
 !
 !
 !
-{% if config_context["lldp"] == true %}
-lldp run
-{% endif %}
-{% if config_context["cdp"] == true %}
-cdp run
-{% endif %}
-!
+
 ! 
 !
 !
