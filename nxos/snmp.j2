@@ -2,8 +2,8 @@ snmp-server contact {{ config_context["snmp"]["contact"] }}
 snmp-server location {{ config_context["snmp"]["location"] }}
 {% for community in config_context["snmp"]["community"] %}
 {% if community["role"] == "RO" %}
-snmp-server community {{ community["name"] }} group network-operator }}
+snmp-server community {{ community["name"] }} group network-operator
 {% elif community["role"] == "RW" %}
-snmp-server community {{ community["name"] }} group network-admin }}
+snmp-server community {{ community["name"] }} group network-admin
 {% endif %}
 {% endfor %}
