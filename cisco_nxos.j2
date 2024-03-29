@@ -96,7 +96,6 @@ logging level lldp 4
 {% if vlans_merged_list is defined %}
 vlan {{ vlans_merged_list }}
 {% endif %}
-{% include './nxos/vlans.j2' %}
 {% if config_context["route-maps"] is defined %}
 {% for name, details in config_context["route-maps"].items() %}
 route-map {{ name }} {{ details["type"] }} {{ details["seq"] }}
