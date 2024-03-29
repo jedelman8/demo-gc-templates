@@ -1,5 +1,5 @@
 {% for community in config_context["snmp"]["community"] %}
-snmp-server community {{ community["name"] }} {{ community["role"] }}
+snmp-server community {{ community["name"] }} {{ community["role"] | lower }}
 {% endfor %}
 snmp-server location {{ config_context["snmp"]["location"] }}
 snmp-server contact {{ config_context["snmp"]["contact"] }}
