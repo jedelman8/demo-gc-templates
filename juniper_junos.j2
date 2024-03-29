@@ -8,7 +8,7 @@ set system root-authentication encrypted-password "$6$Z5pgyCKJ$XFMRbBTMD.RjKlOtz
 set chassis fpc 0 pic 0 number-of-ports 20
 set chassis fpc 0 lite-mode
 {% include './junos/interfaces.j2' %}
-{% if snmp is defined %}
+{% if config_context["snmp"] is defined %}
 {% include './junos/snmp.j2' %}
 {% endif %}
 {% if config_context.get("bgp") %}
