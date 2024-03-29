@@ -86,7 +86,6 @@ logging level lldp 4
 {% if config_context["acl"]["definitions"]["named"]|length > 0 %}
 {% include "./nxos/acl.j2" %}
 {% endif %}
-copp profile {{ config_context["copp-profile"] }}
 {% include './nxos/snmp.j2' %}
 {% include './nxos/ntp.j2' %}
 
